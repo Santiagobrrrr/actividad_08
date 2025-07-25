@@ -7,7 +7,7 @@ while True:
     print(f"3. Eliminar un producto")
     print(f"4. Ver todos los productos")
     print(f"5. Salir del programa")
-    option = input(f"Ingrese la opción a la que desea ingresar (1-5)")
+    option = input(f"Ingrese la opción a la que desea ingresar (1-5): ")
 
     match option:
         case "1":
@@ -15,13 +15,17 @@ while True:
             product_list.append(product_user)
 
         case "2":
+            print(f"Lista de productos actuales: {product_list}")
             index_product = int(input(f"Ingrese el índice del producto a modificar (empieza desde 0): "))
             new_product = input(f"Ingrese el nombre del nuevo producto: ")
             product_list[index_product] = new_product
             print(f"Producto modificado exitosamente")
 
         case "3":
-            print(f"Productos: {product_list}")
+            print(f"Lista de productos actuales: {product_list}")
+            remove_product = input(f"Ingrese el producto que desea eliminar: ")
+            product_list.remove(remove_product)
+            print(f"Producto eliminado exitosamente")
 
         case "4":
             print(f"Productos: {product_list}")
