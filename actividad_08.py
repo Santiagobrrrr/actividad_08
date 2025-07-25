@@ -24,8 +24,11 @@ while True:
         case "3":
             print(f"Lista de productos actuales: {product_list}")
             remove_product = input(f"Ingrese el producto que desea eliminar: ")
-            product_list.remove(remove_product)
-            print(f"Producto eliminado exitosamente")
+            if remove_product in product_list:
+                product_list.remove(remove_product)
+                print(f"Producto eliminado exitosamente")
+            else:
+                print("Producto no existente, intentelo nuevamente")
 
         case "4":
             print(f"Productos: {product_list}")
